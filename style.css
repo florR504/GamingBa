@@ -1,0 +1,751 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.container {
+  display: grid;
+  grid-template:
+    "header" auto
+    "main" auto
+    "footer" 200px;
+}
+.header {
+  grid-area: header;
+  background-color: black;
+}
+.nav {
+  grid-area: nav;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main {
+  grid-area: main;
+  background-color: black;
+}
+.footer {
+  grid-area: footer;
+  background-color: black;
+}
+
+.presentation {
+  height: 700px;
+  background-image: url(/img/joystick-red.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.title {
+  color: #ffff;
+  font-family: "MuseoModerno", cursive;
+  max-width: 20rem;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 5rem;
+}
+.logo {
+  max-width: 18rem;
+}
+.whatWeDo {
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+.presentOurWork {
+  display: flex;
+  justify-content: center;
+}
+.subtitle {
+  color: #ffff;
+  padding: 1rem;
+  font-family: "MuseoModerno", cursive;
+  text-align: center;
+}
+
+.whatWeDo section b {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 2px;
+  opacity: 1;
+  background-color: currentColor;
+  color: #ffff;
+  margin-top: 3.9rem;
+}
+.ourWork {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sidepanel {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  font-family: "MuseoModerno", cursive;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.cardContainer {
+  background-color: black;
+  max-width: 90vw;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: border 0.8s ease;
+}
+.cardContainer h3 {
+  font-family: "MuseoModerno", cursive;
+  text-align: center;
+  color: #ffff;
+}
+.cardContainer div {
+  margin-bottom: 1rem;
+  background-color: black;
+  border-radius: 100%;
+  max-width: 100px;
+  height: 100px;
+}
+.cardContainer div img {
+  width: 100%;
+  padding: 15px;
+}
+.cardContainer:hover {
+  border-color: #bec0be;
+  border-width: 1px;
+  border-style: solid;
+}
+.triangle {
+  position: relative;
+  background-color: #020c2b;
+  height: auto;
+}
+
+.triangle::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 29px 29px 0 29px;
+  border-color: #020c2b transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+.containerImgAndTitle {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerImgAndTitle img {
+  display: none;
+}
+
+.articleBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+.paragraph {
+  color: #ffff;
+  max-width: 20rem;
+  font-size: 16px;
+  font-family: "MuseoModerno", cursive;
+  text-align: center;
+}
+.ourTeam {
+  background-image: url("img/wallpaper.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+.triangle2 {
+  position: relative;
+  background-image: url("img/background.png");
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  width: auto;
+}
+
+.triangle2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 29px 29px 29px;
+  border-color: transparent transparent #2c3e50 transparent;
+  left: 18%;
+  transform: translateX(-50%);
+}
+.paragraphWork {
+  padding-top: 2rem;
+  color: #ffff;
+  font-size: 16px;
+  font-family: "MuseoModerno", cursive;
+  text-align: center;
+}
+.cardGame {
+  width: 15rem;
+  height: 15rem;
+  background-color: #450808;
+}
+.games {
+  width: 100%;
+  height: 100%;
+}
+.carouselWork {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.dropbtn {
+  background-color: black;
+  padding-left: 1rem;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.navLogo {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  height: 300px;
+  border-radius: 10%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 10%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.imageFront {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  border-radius: 10%;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #020c2b;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.containerFlipCards {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+.founders {
+  background: #2c3e50;
+}
+.founders-descripcion {
+  display: none;
+}
+
+.founderContainer {
+  background-image: url("img/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
+  height: 250px;
+  padding-top: 3rem;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+}
+.frameVideo {
+  min-width: 20rem;
+  height: 15rem;
+}
+.contactUs {
+  background-image: url(img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+}
+.caja-de-login {
+  background-color: rgba(12, 10, 15, 0.88);
+  box-shadow: 0px 0px 10px gray;
+  text-align: center;
+  border-color: gray;
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+}
+.login-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-family: "MuseoModerno", cursive;
+}
+
+.boton-ingresar {
+  margin-top: 2.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: rgb(32, 129, 226);
+  border: none;
+  color: white;
+  transition: all 450ms;
+}
+
+.boton-ingresar:hover {
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 0.3rem;
+}
+
+.input-login {
+  border-radius: 0.3rem;
+  width: 16rem;
+  height: 2rem;
+  border-style: none;
+  margin-top: 1rem;
+}
+.message {
+  height: 8rem;
+}
+.logo-login {
+  margin-top: 8px;
+  padding: 11px 4px;
+  border-radius: 0.3rem;
+}
+button:hover {
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #1b0202;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  min-height: 50%;
+  border-radius: 20px;
+}
+
+.modal-content h2 {
+  font-size: 25px;
+  font-family: "MuseoModerno", cursive;
+  color: #fff;
+}
+.modal-content p {
+  margin-top: 20px;
+  color: #fff;
+  font-family: "MuseoModerno", cursive;
+}
+.modal-content img {
+  margin-top: 30px;
+  max-width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+span {
+  font-weight: bold;
+  font-size: 10px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: rgb(195, 79, 79);
+  font-size: smaller;
+  margin-top: 0rem;
+}
+
+.seccionComentarios {
+  min-height: 500px;
+  background-color: #020c2b;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stars {
+  width: 50px;
+}
+
+#comentarios-container {
+  max-width: 600px;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.comentario {
+  padding: 20px;
+  background-color: black;
+  margin-bottom: 10px;
+  position: relative;
+  color: #fff;
+  font-family: "MuseoModerno", cursive;
+  box-shadow: 0px 0px 10px gray;
+}
+
+.comentario .acciones {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-family: "MuseoModerno", cursive;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  min-height: 100px;
+  font-family: "MuseoModerno", cursive;
+}
+
+#agregar-comentario {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  cursor: pointer;
+  background-color: black;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  font-family: "MuseoModerno", cursive;
+}
+
+.editForm {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  align-items: center;
+}
+
+.editForm button {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-family: "MuseoModerno", cursive;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  height: 100%;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-family: "MuseoModerno", cursive;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+}
+.footer-social {
+  background-color: black;
+}
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+}
+.color {
+  background-color: #450808;
+}
+@media (min-width: 480px) {
+  .containerFlipCards {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 2rem;
+  }
+  .flip-card {
+    width: 300px;
+  }
+
+  .contactUs {
+    padding: 6rem;
+  }
+  .login-body {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .caja-de-login {
+    max-width: 25rem;
+    padding: 4rem;
+  }
+  .input-login {
+    width: 19rem;
+  }
+  .modal-content {
+    min-height: 300px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem;
+  }
+
+  .modal-content div {
+    margin-top: 50px;
+  }
+
+  .modal-content img {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-left: 20px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .founders-descripcion {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .founders-descripcion div {
+    max-width: 20rem;
+    font-size: 18px;
+    color: #fff;
+  }
+  .container {
+    display: grid;
+    grid-template:
+      "header" 50px
+      "main" auto
+      "footer" 200px;
+  }
+  .logo {
+    max-width: 28rem;
+  }
+
+  .title {
+    min-width: 40rem;
+  }
+  .subtitle {
+    margin-top: 3rem;
+  }
+
+  .ourWork {
+    margin: 4rem 4rem;
+    flex-direction: row;
+  }
+
+  .cardContainer {
+    background-color: black;
+    width: calc(25% - 10px);
+    height: 12rem;
+    border-radius: 0.5rem;
+  }
+
+  .containerImgAndTitle {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .containerImgAndTitle img {
+    display: block;
+    width: 100%;
+    height: 400px;
+  }
+  .triangle {
+    height: 70vh;
+  }
+  .paragraph {
+    color: #ffff;
+    min-width: 35rem;
+    font-size: 18px;
+  }
+  .paragraphWork {
+    width: auto;
+    font-size: 18px;
+  }
+  .carouselWork {
+    margin: 3rem 2rem;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .triangle2 {
+    height: 80vh;
+    width: auto;
+  }
+  .frameVideo {
+    width: 40rem;
+    height: 20rem;
+  }
+  textarea {
+    max-width: 600px;
+  }
+  footer {
+    text-align: center;
+    padding: 3rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+  }
+}
